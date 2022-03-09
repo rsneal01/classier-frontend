@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {fetchTeachers} from './actions/fetchTeachers'
+import TeachersContainer from './containers/TeachersContainer';
 
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        App
+        <TeachersContainer/>
       </div>
     );
   }
@@ -28,6 +28,6 @@ class App extends React.Component {
 
 
 
-export default connect(null, {fetchTeachers})(App);
+export default App;
 // connects the redux store to this component.  mapSTateToProps gives us access to data in the store(if we don't need to mapStateToProps, can pass null as first argument).  passing an action creater(fetchTeachers) allows us to directly update our store from this component.
 // calls dispatch on return value of fetchTeachers

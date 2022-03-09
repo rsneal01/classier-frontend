@@ -11,6 +11,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(teacherReducer, composeEnhancers(applyMiddleware(thunk)))
 
+// provider store gives children/grandchildren access to our redux store.  we use connect to tell a component that it can access the store
 ReactDOM.render(
   <Provider store={store}>
     <App />
