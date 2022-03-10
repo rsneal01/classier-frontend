@@ -1,0 +1,16 @@
+Redux:
+
+Allows for easier state management with complex apps.
+
+Each component can access the stored state without having to send down props from one component to another.
+
+Reducers are pure functions that take the current state of an application, perform an action, and return a new state
+As pure functions, they do not change the data in the object passed to them.
+
+The store holds the application state. It is highly recommended to keep only one store in any Redux application. You can access the state stored, update the state, and register or unregister listeners via helper methods.
+
+Redux allows developers to intercept all actions dispatched from components before they are passed to the reducer function. This interception is done via middlewares.Technically, middlewares are functions that call the next method received in an argument after processing the current action. These are called after every dispatch.
+
+why use redux?
+
+When using Redux with React, states will no longer need to be lifted up. This makes it easier for you to trace which action causes any change.  Redux is strict about how code should be organized, which makes it easier for someone with knowledge of Redux to understand the structure of any Redux application. This generally makes it easier to maintain. Redux makes it easy to debug an application. performance optimizations.  

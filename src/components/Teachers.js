@@ -5,7 +5,7 @@ const Teachers = (props) => {
 
     return(
         <div>
-            Teachers
+            {props.teachers.map(teacher => <li key={teacher.id}>{teacher.name}</li>)}
         </div>
     )
 
