@@ -16,10 +16,10 @@ class TeachersContainer extends React.Component {
     render() {
         return(
             <div>
-                <TeacherForm />
+                <TeacherForm /><br></br>
                 <Teachers teachers={this.props.teachers}/>
             </div>
-            // sends teachers down to Teachers component
+            // sends teachers prop down to Teachers component
         )
     }
 }
@@ -36,6 +36,9 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, {fetchTeachers})(TeachersContainer);
+// after reducer updates store, mapStateToProps maps to props so they can be passed down to teachers components as props
+
+
 
 // fetchTeachers is equivalent to mapDispatchToProps
 // connects a React component to a Redux store.

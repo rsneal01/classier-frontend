@@ -10,14 +10,16 @@ import teacherReducer from './reducers/teacherReducer'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(teacherReducer, composeEnhancers(applyMiddleware(thunk)))
+// creates our store.  applyMiddleware sets up thunk, so we can pass async requests to connect(dispatch)
 
-// provider store gives children/grandchildren access to our redux store.  we use connect to tell a component that it can access the store
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
 );
+// provider store gives children/grandchildren access to our redux store.  we use connect to tell a component that it can access the store
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
