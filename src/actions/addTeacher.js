@@ -10,6 +10,9 @@ export const addTeacher = (data) => {
             method: 'POST',
             body: JSON.stringify(data)
         })
+        .then(response => response.json())
+        .then(teacher => dispatch({type: 'ADD_TEACHER', payload: teacher}))
+        // dispatch requires a type attribute and payload attribute
 
 }
 

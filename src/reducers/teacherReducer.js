@@ -3,6 +3,10 @@ export default function teacherReducer(state = {teachers: []}, action) {
     switch (action.type) {
     case 'FETCH_TEACHERS': 
         return {teachers: action.payload}
+    case 'ADD_TEACHER':
+        return {...state, teachers: [...state.teachers, action.payload]}
+        // setting case to ADD_TEACHER allows us to dispatch to this reducer from addTeacher action.
+        // using spread operator here returns the previous state and previous teachers, while also adding the new teacher through action.payload
     default: 
         return state
     }
