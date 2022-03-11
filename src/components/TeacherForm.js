@@ -23,7 +23,7 @@ class TeacherForm extends React.Component {
         event.preventDefault()
         this.props.addTeacher(this.state)
     }
-    // handleSubmit will trigger an action creater to create a new Teacher in the database, sending state to the action creater
+    // handleSubmit will trigger an action creater to create a new Teacher in the database, sending state to the action creater addTeacher
 
     render() {
         return(
