@@ -18,3 +18,4 @@ export const addTeacher = (data) => {
 
 }
 // thunk allows us to bring dispatch into this function, so that we can dispatch to our reducer
+// this action makes a post request to back end, create a new teacher, and dispatch it with type 'ADD_TEACHER' to our reducer.

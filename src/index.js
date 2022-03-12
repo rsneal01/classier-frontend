@@ -6,7 +6,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import teacherReducer from './reducers/teacherReducer'
-
+import {BrowserRouter as Router} from 'react-router-dom'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(teacherReducer, composeEnhancers(applyMiddleware(thunk)))
@@ -15,11 +15,15 @@ let store = createStore(teacherReducer, composeEnhancers(applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
 // provider store gives children/grandchildren access to our redux store.  we use connect to tell a component that it can access the store
+// wrapping App in Router gives App and all its children access to Router
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

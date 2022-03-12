@@ -22,8 +22,12 @@ class TeacherForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addTeacher(this.state)
+        this.setState({
+            name: ''
+        })
     }
     // handleSubmit will trigger an action creater to create a new Teacher in the database, sending state to the action creater addTeacher
+    // we call setState after submit and reset form value back to empty, to clear form after user submits
 
     render() {
         return(
@@ -37,6 +41,9 @@ class TeacherForm extends React.Component {
         )
     }
 }
+// controlled form: values are held in state. need handleCHange to update, and handleSubmit to send state to ADD_TEACHER action creator.  
+
 
 export default connect(null, {addTeacher})(TeacherForm);
-// this component is only concerned about adding/updating Teachers, so doesnt need mapStateToProps
+// this component is only concerned about adding/updating Teachers, so doesnt need mapStateToProps.
+// we use connect so that we can call this.props.addTeacher, and so that we can dispatch to our reducer

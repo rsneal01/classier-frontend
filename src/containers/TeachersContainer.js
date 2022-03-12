@@ -4,7 +4,11 @@ import Teachers from '../components/Teachers';
 import {connect} from 'react-redux'
 import { fetchTeachers } from '../actions/fetchTeachers';
 
+import {Route, Switch} from 'react-router-dom'
+
+import TeacherShow from '../components/TeacherShow';
 // fetch teachers from backend, add them to redux store, map them to props, use those teachers in container
+// we set up routes in this container because this is where we are doing our fetching
 
 class TeachersContainer extends React.Component {
 
@@ -16,10 +20,17 @@ class TeachersContainer extends React.Component {
     render() {
         return(
             <div>
-                <TeacherForm /><br></br>
-                <Teachers teachers={this.props.teachers}/>
+                
+                    <Route path='/teachers/new' component={TeacherForm}/>
+                    <Route path='/teachers/:id' render={(routerProps) => 
+                        <TeacherShow {...routerProps} teachers={this.props.teachers}/> } />
+                    <Route exact path='/teachers' render={() => 
+                        <Teachers teachers={this.props.teachers}/> }
+                        />
+                
             </div>
             // sends teachers prop down to Teachers component
+            // router props gives us access to additional params such as match
         )
     }
 }
