@@ -3,7 +3,7 @@ import TeacherForm from '../components/TeacherForm';
 import Teachers from '../components/Teachers';
 import {connect} from 'react-redux'
 import { fetchTeachers } from '../actions/fetchTeachers';
-
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom'
 
 import TeacherShow from '../components/TeacherShow';
@@ -16,21 +16,21 @@ class TeachersContainer extends React.Component {
         this.props.fetchTeachers()
     }
 
-
     render() {
         return(
             <div>
-                
+                  <Switch>
                     <Route path='/teachers/new' component={TeacherForm}/>
                     <Route path='/teachers/:id' render={(routerProps) => 
                         <TeacherShow {...routerProps} teachers={this.props.teachers}/> } />
-                    <Route exact path='/teachers' render={() => 
+                    <Route path='/teachers' render={() => 
                         <Teachers teachers={this.props.teachers}/> }
                         />
-                
+                    </Switch>
             </div>
             // sends teachers prop down to Teachers component
-            // router props gives us access to additional params such as match
+            // router props gives us access to additional params such as match.  
+            // Switch will render the FIRST path that matches, this way we don't hit teachers/id when going to teachers/new
         )
     }
 }
