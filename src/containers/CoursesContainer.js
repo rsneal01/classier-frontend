@@ -7,7 +7,7 @@ class CoursesContainer extends React.Component {
     render() {
         return( 
             <div>
-                <CourseForm />
+                <CourseForm teacher={this.props.teacher}/>
                 <Courses courses={this.props.teacher && this.props.teacher.courses} />
             </div>
             // using && ternary operator to check if this.props.teacher exists

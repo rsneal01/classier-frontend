@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addCourse } from "../actions/addCourse";
 
 class CourseForm extends React.Component {
 
@@ -15,10 +17,10 @@ class CourseForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addCourse(this.state)
+        this.props.addCourse(this.state, this.props.teacher.id)
         this.setState({
-            name: '',
-            title: ''
+            title: '',
+            description: ''
         })
     }
     // handleSubmit will trigger an action creater to create a new Course in the database, sending state to the action creater addCourse
@@ -45,4 +47,4 @@ class CourseForm extends React.Component {
 export default connect(null, {addCourse})(CourseForm)
 
 // this component will submit a new course, sent to database, dispatched to redux store to update store
-// this means we need connect, so that when we call our creat action it will dispatch to reducer
+// this means we need connect, so that when we call our create action it will dispatch to reducer
