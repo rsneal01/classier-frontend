@@ -17,7 +17,15 @@ export default function teacherReducer(state = {teachers: []}, action) {
             }
         })
         return {...state, teachers: teachers}
-      
+      case 'DELETE_COURSE':
+        let teachersTwo = state.teachers.map(teacher => {
+            if (teacher.id === action.payload.id) {
+                return action.payload
+            }  else {
+                return teacher
+            }
+        })
+        return {...state, teachers: teachersTwo}
     default: 
         return state
     }
