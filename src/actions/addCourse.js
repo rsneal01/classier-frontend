@@ -11,12 +11,20 @@ export const addCourse = (course, teacherId) => {
             body: JSON.stringify(course)
         })
         .then(response => response.json())
-        .then(teacher => dispatch({type: 'ADD_COURSE', payload: teacher}))
+        .then(teacher => {
+            if (teacher.error) {
+                alert(teacher.error)
+            } else {
+                dispatch({type: 'ADD_COURSE', payload: teacher})
+            }
+        }
+        )
+    }
         // dispatch requires a type attribute and payload attribute
         // we change our backend here, courses/create, to render @teacher.  this way when we create a new course we dont have to search through teachers
         // to find the right teacher
 
 }
 
-}
+
 // dispatch to reducer to update store

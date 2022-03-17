@@ -9,3 +9,6 @@ export const deleteCourse = (courseId, teacherId) => {
     }
 
 }
+
+// we dont need to send body in this request, because we are just deleting
+// body is necessary for create/update, because we are sending new information

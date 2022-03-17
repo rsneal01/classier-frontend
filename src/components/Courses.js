@@ -14,7 +14,7 @@ const handleDelete = (course) => {
 return (
     <div>
         {props.courses && props.courses.map(course => 
-            <li key={course.id}>{course.title} - {course.description} <button onClick={() => handleDelete(course)}>Delete Course</button></li>
+            <li key={course.id}>{course.title} - {course.description}<button onClick={() => handleDelete(course)}>Delete Course</button></li>
             )}
     </div>
     // check to see if props.courses is defined, if true go on to map over courses and return each title and descript

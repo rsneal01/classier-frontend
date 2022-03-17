@@ -2,7 +2,7 @@
 
 import React from "react";
 import CoursesContainer from '../containers/CoursesContainer'
-// import {Redirect} from 'react-router-dom'
+import TeacherEdit from "./TeacherEdit";
 
 
 const TeacherShow = (props) => {
@@ -14,6 +14,7 @@ const TeacherShow = (props) => {
                 {teacher ? teacher.name : null}
             </h2>
             <CoursesContainer teacher={teacher}/>
+            <TeacherEdit teacher={teacher}/>
         </div>
     // if teacher exists, render name, otherwise null
     )
