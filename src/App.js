@@ -2,6 +2,7 @@ import React from 'react';
 // import {connect} from 'react-redux'
 import TeachersContainer from './containers/TeachersContainer';
 
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <TeachersContainer/>
+        <Home/>
       </div>
     );
   }
