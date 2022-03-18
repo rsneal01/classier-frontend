@@ -30,12 +30,13 @@ class CourseForm extends React.Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Course title:</label>
                     <input type='text' placeholder="Title" value='this.state.title' name='title' onChange={this.handleChange} />
                     <br></br>
                     <label>Course description:</label>
                     <input type='text' placeholder="Description" value='this.state.description' name='description' onChange={this.handleChange} />
+                    <input type='submit'/>
                 </form>
             </div>
         )
