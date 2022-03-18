@@ -1,4 +1,4 @@
-export const addTeacher = (data) => {
+export const editTeacher = (data) => {
 
 
     return (dispatch) => {

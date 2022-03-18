@@ -1,6 +1,7 @@
 import React from 'react';
 // import {connect} from 'react-redux'
 import TeachersContainer from './containers/TeachersContainer';
+import Home from './components/Home';
 
 
 class App extends React.Component {

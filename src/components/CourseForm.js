@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addCourse } from "../actions/addCourse";
+import { Button } from 'react-bootstrap';
 
 class CourseForm extends React.Component {
 
@@ -36,6 +37,7 @@ class CourseForm extends React.Component {
                     <br></br>
                     <label>Course description:</label>
                     <input type='text' placeholder="Description" value='this.state.description' name='description' onChange={this.handleChange} />
+                    {/* <Button as="input" type="submit" value="Submit" />{' '} */}
                     <input type='submit'/>
                 </form>
             </div>

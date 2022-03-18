@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { editTeacher } from "../actions/addTeacher";
+import { editTeacher } from "../actions/editTeacher";
 
 // class component for controlled form.  if props are being passed we can call this.props
 

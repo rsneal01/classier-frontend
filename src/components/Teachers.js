@@ -1,4 +1,5 @@
 import React from "react";
+import {Route, Link} from 'react-router-dom'
 // import TeacherShow from './TeacherShow'
 
 
@@ -7,7 +8,6 @@ const Teachers = (props) => {
 
     return(
         <div>
-           
             {props.teachers.map(teacher => <li key={teacher.id}>
                 <Link to={`/teachers/${teacher.id}`}>{teacher.name}</Link>
             </li> )}

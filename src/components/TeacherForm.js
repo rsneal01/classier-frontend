@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTeacher } from "../actions/addTeacher";
+import { Button } from 'react-bootstrap';
 
 // class component for controlled form.  if props are being passed we can call this.props
 
@@ -35,13 +36,15 @@ class TeacherForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Teacher Name:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}  /><br></br>
-                    <input type='submit'/>
+                    <Button as="input" type="submit" value="Submit" />{' '}
+                    {/* <input type='submit'/> */}
                 </form>
             </div>
         )
     }
 }
-// controlled form: values are held in state. need handleCHange to update, and handleSubmit to send state to ADD_TEACHER action creator.  
+// controlled form: values are held in state. need handleCHange to update, and handleSubmit to send state to ADD_TEACHER action creator.
+// making use of React bootstrap Button component here  
 
 
 export default connect(null, {addTeacher})(TeacherForm);
