@@ -37,7 +37,8 @@ class TeachersContainer extends React.Component {
         )
     }
 }
-// 
+// React routes allow user to move between components while preserving state, and provide unique URLs for these components to make them more shareable,
+// simplifying site navigation. 
 
 
 const mapStateToProps = state => {

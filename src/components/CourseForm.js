@@ -37,8 +37,8 @@ class CourseForm extends React.Component {
                     <br></br>
                     <label>Course description:</label>
                     <input type='text' placeholder="Description" value='this.state.description' name='description' onChange={this.handleChange} />
-                    {/* <Button as="input" type="submit" value="Submit" />{' '} */}
-                    <input type='submit'/>
+                    <Button as="input" type="submit" value="Submit" />{' '}
+                    {/* <input type='submit'/> */}
                 </form>
             </div>
         )
