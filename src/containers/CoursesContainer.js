@@ -1,5 +1,5 @@
 import React from "react";
-import CourseForm from '../.components/CourseForm'
+import CourseForm from '../components/CourseForm'
 import Courses from "../components/Courses";
 
 class CoursesContainer extends React.Component {

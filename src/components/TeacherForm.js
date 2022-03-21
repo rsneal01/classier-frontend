@@ -36,8 +36,8 @@ class TeacherForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Teacher Name:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}  /><br></br>
-                    <Button as="input" type="submit" value="Submit" />{' '}
-                    {/* <input type='submit'/> */}
+                    {/* <Button as="input" type="submit" value="Submit" />{' '} */}
+                    <input type='submit'/>
                 </form>
             </div>
         )

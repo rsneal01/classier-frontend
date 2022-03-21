@@ -25,3 +25,4 @@ return (
 }
 
 export default connect(null, {deleteCourse})(Courses)
+// export default Courses
