@@ -2,15 +2,10 @@ import React from 'react';
 // import {connect} from 'react-redux'
 import TeachersContainer from './containers/TeachersContainer';
 import Home from './components/Home';
-import TeacherForm from './components/TeacherForm';
-import Teachers from './components/Teachers';
-import {connect} from 'react-redux'
-import { fetchTeachers } from './actions/fetchTeachers';
+
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import {Route, Switch} from 'react-router-dom'
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
-import TeacherShow from './components/TeacherShow';
-import NavBar from './components/NavBar';
+
 
 class App extends React.Component {
 

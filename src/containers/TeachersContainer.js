@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import { fetchTeachers } from '../actions/fetchTeachers';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import {Route, Switch} from 'react-router-dom'
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import TeacherShow from '../components/TeacherShow';
 import NavBar from '../components/NavBar';
 // fetch teachers from backend, add them to redux store, map them to props, use those teachers in container
@@ -20,15 +20,18 @@ class TeachersContainer extends React.Component {
     render() {
         return(
             <div>
+                <Router>
                 <NavBar />
                   <Routes>
                     <Route exact path='/teachers/new' element={<TeacherForm/>}/>
                     <Route path='/teachers/:id' render={(routerProps) => 
                         <TeacherShow {...routerProps} teachers={this.props.teachers}/> } />
-                    <Route path='/teachers' render={() => 
-                        <Teachers teachers={this.props.teachers}/> }
+                        
+                    <Route path='/teachers' element={(routerProps) => 
+                        <Teachers {...routerProps} teachers={this.props.teachers}/> }
                         />
                     </Routes>
+                </Router>
             </div>
             // *** may need to change component to element ***
 
