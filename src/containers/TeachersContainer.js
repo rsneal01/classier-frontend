@@ -24,16 +24,18 @@ class TeachersContainer extends React.Component {
                 <NavBar />
                   <Routes>
                     <Route exact path='/teachers/new' element={<TeacherForm/>}/>
-                    <Route path='/teachers/:id' render={(routerProps) => 
-                        <TeacherShow {...routerProps} teachers={this.props.teachers}/> } />
-                        
-                    <Route path='/teachers' element={(routerProps) => 
-                        <Teachers {...routerProps} teachers={this.props.teachers}/> }
+                    <Route path='/teachers/:id' element={<TeacherShow  teachers={this.props.teachers}/>}/>
+                    <Route path='/teachers' element={<Teachers teachers={this.props.teachers}/>}
+                   
                         />
                     </Routes>
                 </Router>
             </div>
-            // *** may need to change component to element ***
+
+            /* <Route path='/teachers' element={(routerProps) => 
+                    <Teachers {...routerProps} teachers={this.props.teachers}/> } */
+            // <Route path='/teachers/:id' element={(routerProps) => 
+            //     <TeacherShow {...routerProps} teachers={this.props.teachers}/> } />
 
             // sends teachers prop down to Teachers component
             // router props gives us access to additional params such as match.  

@@ -33,10 +33,10 @@ class CourseForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Course title:</label>
-                    <input type='text' placeholder="Title" value='this.state.title' name='title' onChange={this.handleChange} />
+                    <input type='text' placeholder="Title" value={this.state.title} name='title' onChange={this.handleChange} />
                     <br></br>
                     <label>Course description:</label>
-                    <input type='text' placeholder="Description" value='this.state.description' name='description' onChange={this.handleChange} />
+                    <input type='text' placeholder="Description" value={this.state.description} name='description' onChange={this.handleChange} />
                     <Button as="input" type="submit" value="Submit" />{' '}
                     {/* <input type='submit'/> */}
                 </form>

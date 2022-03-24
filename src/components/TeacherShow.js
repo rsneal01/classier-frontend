@@ -3,10 +3,13 @@
 import React from "react";
 import CoursesContainer from '../containers/CoursesContainer'
 import TeacherEdit from "./TeacherEdit";
+import { Link, useParams } from 'react-router-dom';
 
 
 const TeacherShow = (props) => {
-    let teacher = props.teachers[props.match.params.id - 1]
+    const id  = useParams();
+    const teacher = props.teachers.find((t) => t._id === Number(id));
+    // let teacher = props.teachers[props.match.params.id - 1]
     // using URL to match specific account (using routerProps)
     return (
         <div>

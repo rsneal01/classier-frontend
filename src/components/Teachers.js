@@ -8,6 +8,7 @@ import {Route, Link} from 'react-router-dom'
 
 const Teachers = (props) => {
 
+
 // const mappedTeachers = () => {
 //     {props.teachers.map(teacher => <li key={teacher.id}>
 //         <Link to={`/teachers/${teacher.id}`}>{teacher.name}</Link>
@@ -16,6 +17,7 @@ const Teachers = (props) => {
  
 
 return(
+    
     <div>
         <Card border="primary" style={{ width: '18rem' }}>
         <Card.Body>
