@@ -13,9 +13,12 @@ const handleDelete = (course) => {
 
 return (
     <div>
+        <h3>Delete a course:</h3>
         {props.courses && props.courses.map(course => 
             <li key={course.id}>{course.title} - {course.description}<button onClick={() => handleDelete(course)}>Delete Course</button></li>
             )}
+            <br></br>
+            <br></br>
     </div>
     // check to see if props.courses is defined, if true go on to map over courses and return each title and descript
     // first time props comes through may be undefined (this can happen if visiting URL directly rather than through links)

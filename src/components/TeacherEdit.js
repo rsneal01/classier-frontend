@@ -33,6 +33,7 @@ class TeacherEdit extends React.Component {
     render() {
         return(
             <div>
+                <h3>Edit teacher name:</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Teacher Name:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}  /><br></br>
